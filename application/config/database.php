@@ -42,7 +42,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'local',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -60,6 +60,16 @@ return array(
 	*/
 
 	'connections' => array(
+
+		'local' => array(
+			'driver'   => 'mysql',
+			'host'     => 'localhost',
+			'database' => 'verfii',
+			'username' => 'verfii',
+			'password' => '6ru2reSaneWReguD',
+			'charset'  => 'utf8',
+			'prefix'   => '',
+		),
 
 		'sqlite' => array(
 			'driver'   => 'sqlite',
