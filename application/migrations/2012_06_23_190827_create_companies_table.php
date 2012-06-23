@@ -24,6 +24,8 @@ class Create_Companies_Table {
 			$table->date('date_joined');
             $table->integer('status');
 			$table->string('contact_name');
+
+			$table->timestamps();
 		});
 	}
 

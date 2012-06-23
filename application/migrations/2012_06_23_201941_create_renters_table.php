@@ -13,7 +13,9 @@ class Create_Renters_Table {
 		{
 			$table->increments('id');
 
-			$table->string('name');
+			$table->string('first_name');
+			$table->string('middle_name')->nullable();
+			$table->string('last_name');
 			$table->string('driver_license_number');
 			$table->string('driver_license_state');
 			$table->date('date_of_birth');

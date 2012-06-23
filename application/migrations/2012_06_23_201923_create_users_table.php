@@ -14,9 +14,10 @@ class Create_Users_Table {
 			$table->increments('id');
 
 			$table->string('username');
+			$table->string('password');
 			$table->string('email');
 			$table->string('first_name');
-			$table->string('middle_name');
+			$table->string('middle_name')->nullable();
 			$table->string('last_name');
 
 			$table->integer('company_id');
