@@ -19,6 +19,9 @@ class Create_Users_Table {
 			$table->string('middle_name');
 			$table->string('last_name');
 
+			$table->integer('company_id');
+            $table->foreign('company_id')->references('id')->on('companies');
+
 			$table->timestamps();
 		});
 	}

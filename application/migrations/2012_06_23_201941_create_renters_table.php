@@ -18,6 +18,9 @@ class Create_Renters_Table {
 			$table->string('driver_license_state');
 			$table->date('date_of_birth');
 
+			$table->integer('company_id');
+            $table->foreign('company_id')->references('id')->on('companies');
+
 			$table->timestamps();
 		});
 	}
