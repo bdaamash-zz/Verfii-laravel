@@ -17,6 +17,8 @@ class Create_Renters_Table {
 			$table->string('driver_license_number');
 			$table->string('driver_license_state');
 			$table->date('date_of_birth');
+
+			$table->timestamps();
 		});
 	}
 
