@@ -1,6 +1,6 @@
 <?php
 
-class Users_Controller extends Controller {
+class Admin_Users_Controller extends Controller {
 
 	/**
 	 * The layout being used by the controller.

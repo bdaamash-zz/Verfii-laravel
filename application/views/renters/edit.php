@@ -1,7 +1,7 @@
 <div class="span16">
 	<ul class="breadcrumb span6">
 		<li>
-			<a href="<?php echo URL::to('renters'); ?>">Renters</a> <span class="divider">/</span>
+			<a href="<?php echo URL::to('admin/renters'); ?>">Renters</a> <span class="divider">/</span>
 		</li>
 		<li class="active">Editing Renter</li>
 	</ul>

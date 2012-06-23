@@ -1,6 +1,6 @@
 <?php
 
-class Companies_Controller extends Controller {
+class Admin_Companies_Controller extends Controller {
 
 	/**
 	 * The layout being used by the controller.

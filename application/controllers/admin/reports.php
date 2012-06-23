@@ -1,6 +1,6 @@
 <?php
 
-class Reports_Controller extends Controller {
+class Admin_Reports_Controller extends Controller {
 
 	/**
 	 * The layout being used by the controller.

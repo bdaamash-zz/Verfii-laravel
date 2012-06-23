@@ -1,6 +1,6 @@
 <?php
 
-class Renters_Controller extends Controller {
+class Admin_Renters_Controller extends Controller {
 
 	/**
 	 * The layout being used by the controller.

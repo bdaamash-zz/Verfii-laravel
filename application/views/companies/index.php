@@ -32,9 +32,9 @@
 					<td><?php echo $company->date_joined; ?></td>
 					<td><?php echo $company->contact_name; ?></td>
 					<td>
-						<a href="<?php echo URL::to('companies/view/'.$company->id); ?>">View</a>
-						<a href="<?php echo URL::to('companies/edit/'.$company->id); ?>">Edit</a>
-						<a href="<?php echo URL::to('companies/delete/'.$company->id); ?>" onclick="return confirm('Are you sure?')">Delete</a>
+						<a href="<?php echo URL::to('admin/companies/view/'.$company->id); ?>">View</a>
+						<a href="<?php echo URL::to('admin/companies/edit/'.$company->id); ?>">Edit</a>
+						<a href="<?php echo URL::to('admin/companies/delete/'.$company->id); ?>" onclick="return confirm('Are you sure?')">Delete</a>
 					</td>
 				</tr>
 			<?php endforeach; ?>
@@ -42,4 +42,4 @@
 	</table>
 <?php endif; ?>
 
-<p><a class="btn success" href="<?php echo URL::to('companies/create'); ?>">Create new Company</a></p>
+<p><a class="btn success" href="<?php echo URL::to('admin/companies/create'); ?>">Create new Company</a></p>

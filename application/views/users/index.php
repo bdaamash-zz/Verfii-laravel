@@ -22,9 +22,9 @@
 					<td><?php echo $user->middle_name; ?></td>
 					<td><?php echo $user->last_name; ?></td>
 					<td>
-						<a href="<?php echo URL::to('users/view/'.$user->id); ?>">View</a>
-						<a href="<?php echo URL::to('users/edit/'.$user->id); ?>">Edit</a>
-						<a href="<?php echo URL::to('users/delete/'.$user->id); ?>" onclick="return confirm('Are you sure?')">Delete</a>
+						<a href="<?php echo URL::to('admin/users/view/'.$user->id); ?>">View</a>
+						<a href="<?php echo URL::to('admin/users/edit/'.$user->id); ?>">Edit</a>
+						<a href="<?php echo URL::to('admin/users/delete/'.$user->id); ?>" onclick="return confirm('Are you sure?')">Delete</a>
 					</td>
 				</tr>
 			<?php endforeach; ?>
@@ -32,4 +32,4 @@
 	</table>
 <?php endif; ?>
 
-<p><a class="btn success" href="<?php echo URL::to('users/create'); ?>">Create new User</a></p>
+<p><a class="btn success" href="<?php echo URL::to('admin/users/create'); ?>">Create new User</a></p>

@@ -1,7 +1,7 @@
 <div class="span16">
 	<ul class="breadcrumb span6">
 		<li>
-			<a href="<?php echo URL::to('companies'); ?>">Companies</a> <span class="divider">/</span>
+			<a href="<?php echo URL::to('admin/companies'); ?>">Companies</a> <span class="divider">/</span>
 		</li>
 		<li class="active">Viewing Company</li>
 	</ul>
@@ -49,4 +49,4 @@
 	<?php echo $company->contact_name; ?>
 </p>
 
-<p><a href="<?php echo URL::to('companies/edit/'.$company->id); ?>">Edit</a> | <a href="<?php echo URL::to('companies/delete/'.$company->id); ?>" onclick="return confirm('Are you sure?')">Delete</a></p>
+<p><a href="<?php echo URL::to('admin/companies/edit/'.$company->id); ?>">Edit</a> | <a href="<?php echo URL::to('admin/companies/delete/'.$company->id); ?>" onclick="return confirm('Are you sure?')">Delete</a></p>

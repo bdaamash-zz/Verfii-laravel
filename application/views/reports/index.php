@@ -28,9 +28,9 @@
 					<td><?php echo $report->company_id; ?></td>
 					<td><?php echo $report->status; ?></td>
 					<td>
-						<a href="<?php echo URL::to('reports/view/'.$report->id); ?>">View</a>
-						<a href="<?php echo URL::to('reports/edit/'.$report->id); ?>">Edit</a>
-						<a href="<?php echo URL::to('reports/delete/'.$report->id); ?>" onclick="return confirm('Are you sure?')">Delete</a>
+						<a href="<?php echo URL::to('admin/reports/view/'.$report->id); ?>">View</a>
+						<a href="<?php echo URL::to('admin/reports/edit/'.$report->id); ?>">Edit</a>
+						<a href="<?php echo URL::to('admin/reports/delete/'.$report->id); ?>" onclick="return confirm('Are you sure?')">Delete</a>
 					</td>
 				</tr>
 			<?php endforeach; ?>
@@ -38,4 +38,4 @@
 	</table>
 <?php endif; ?>
 
-<p><a class="btn success" href="<?php echo URL::to('reports/create'); ?>">Create new Report</a></p>
+<p><a class="btn success" href="<?php echo URL::to('admin/reports/create'); ?>">Create new Report</a></p>
