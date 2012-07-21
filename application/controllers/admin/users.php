@@ -51,7 +51,7 @@ class Admin_Users_Controller extends Controller {
 			'username' => array('required', 'max:255'),
 			'email' => array('required', 'max:255'),
 			'first_name' => array('required', 'max:255'),
-			'middle_name' => array('required', 'max:255'),
+			'middle_name' => array('max:255'),
 			'last_name' => array('required', 'max:255'),
 		));
 
@@ -64,6 +64,7 @@ class Admin_Users_Controller extends Controller {
 			$user->first_name = Input::get('first_name');
 			$user->middle_name = Input::get('middle_name');
 			$user->last_name = Input::get('last_name');
+			$user->company_id = Input::get('company');
 
 			$user->save();
 
@@ -146,6 +147,7 @@ class Admin_Users_Controller extends Controller {
 			$user->first_name = Input::get('first_name');
 			$user->middle_name = Input::get('middle_name');
 			$user->last_name = Input::get('last_name');
+			$user->company_id = Input::get('company');
 
 			$user->save();
 
