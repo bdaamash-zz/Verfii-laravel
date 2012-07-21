@@ -37,6 +37,9 @@ Route::get('/', function()
 	return View::make('home.index');
 });
 
+// TODO: Put admin behind login wall when admin fixture have been created
+//Route::filter('pattern: admin/*', 'auth');
+
 Route::controller(Controller::detect());
 
 /*
@@ -109,5 +112,5 @@ Route::filter('csrf', function()
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::to('login');
+	if (Auth::guest()) return View::make('login.index');
 });
