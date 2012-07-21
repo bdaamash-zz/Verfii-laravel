@@ -79,12 +79,12 @@ class Admin_Companies_Controller extends Controller {
 
 			Session::flash('message', 'Added company #'.$company->id);
 
-			return Redirect::to('companies');
+			return Redirect::to('admin/companies');
 		}
 
 		else
 		{
-			return Redirect::to('companies/create')->with_errors($validation->errors);
+			return Redirect::to('admin/companies/create')->with_errors($validation->errors);
 		}
 	}
 
@@ -100,7 +100,7 @@ class Admin_Companies_Controller extends Controller {
 
 		if(is_null($company))
 		{
-			return Redirect::to('companies');
+			return Redirect::to('admin/companies');
 		}
 
 		$this->layout->title   = 'Viewing Company #'.$id;
@@ -119,7 +119,7 @@ class Admin_Companies_Controller extends Controller {
 
 		if(is_null($company))
 		{
-			return Redirect::to('companies');
+			return Redirect::to('admin/companies');
 		}
 
 		$this->layout->title   = 'Editing Company';
@@ -153,7 +153,7 @@ class Admin_Companies_Controller extends Controller {
 
 			if(is_null($company))
 			{
-				return Redirect::to('companies');
+				return Redirect::to('admin/companies');
 			}
 
 			$company->name = Input::get('name');
@@ -171,12 +171,12 @@ class Admin_Companies_Controller extends Controller {
 
 			Session::flash('message', 'Updated company #'.$company->id);
 
-			return Redirect::to('companies');
+			return Redirect::to('admin/companies');
 		}
 
 		else
 		{
-			return Redirect::to('companies/edit/'.$id)->with_errors($validation->errors);
+			return Redirect::to('admin/companies/edit/'.$id)->with_errors($validation->errors);
 		}
 	}
 
@@ -197,6 +197,6 @@ class Admin_Companies_Controller extends Controller {
 			Session::flash('message', 'Deleted company #'.$company->id);
 		}
 
-		return Redirect::to('companies');
+		return Redirect::to('admin/companies');
 	}
 }

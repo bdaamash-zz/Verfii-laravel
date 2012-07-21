@@ -69,12 +69,12 @@ class Admin_Users_Controller extends Controller {
 
 			Session::flash('message', 'Added user #'.$user->id);
 
-			return Redirect::to('users');
+			return Redirect::to('admin/users');
 		}
 
 		else
 		{
-			return Redirect::to('users/create')->with_errors($validation->errors);
+			return Redirect::to('admin/users/create')->with_errors($validation->errors);
 		}
 	}
 
@@ -90,7 +90,7 @@ class Admin_Users_Controller extends Controller {
 
 		if(is_null($user))
 		{
-			return Redirect::to('users');
+			return Redirect::to('admin/users');
 		}
 
 		$this->layout->title   = 'Viewing User #'.$id;
@@ -109,7 +109,7 @@ class Admin_Users_Controller extends Controller {
 
 		if(is_null($user))
 		{
-			return Redirect::to('users');
+			return Redirect::to('admin/users');
 		}
 
 		$this->layout->title   = 'Editing User';
@@ -138,7 +138,7 @@ class Admin_Users_Controller extends Controller {
 
 			if(is_null($user))
 			{
-				return Redirect::to('users');
+				return Redirect::to('admin/users');
 			}
 
 			$user->username = Input::get('username');
@@ -151,12 +151,12 @@ class Admin_Users_Controller extends Controller {
 
 			Session::flash('message', 'Updated user #'.$user->id);
 
-			return Redirect::to('users');
+			return Redirect::to('admin/users');
 		}
 
 		else
 		{
-			return Redirect::to('users/edit/'.$id)->with_errors($validation->errors);
+			return Redirect::to('admin/users/edit/'.$id)->with_errors($validation->errors);
 		}
 	}
 
@@ -177,6 +177,6 @@ class Admin_Users_Controller extends Controller {
 			Session::flash('message', 'Deleted user #'.$user->id);
 		}
 
-		return Redirect::to('users');
+		return Redirect::to('admin/users');
 	}
 }
