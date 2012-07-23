@@ -34,18 +34,21 @@
 
 Route::controller(Controller::detect());
 
+Route::get('/', array('before' => 'auth', function()
+{
+	return View::make('home.index');
+}));
+
 Route::get('login', function() {
-    return View::make('login');
+    $content = View::make('login');
+    return View::make('layout')
+        ->with('title', 'Login')
+        ->with('content', $content);
 });
 
 Route::post('login', function() {
     return 'Login form posted. TODO: Validate login and redirect.';
 });
-
-Route::get('/', array('before' => 'auth', function()
-{
-	return View::make('home.index');
-}));
 
 /*
 |--------------------------------------------------------------------------
