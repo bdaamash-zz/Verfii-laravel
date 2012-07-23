@@ -34,19 +34,20 @@
 
 Route::controller(Controller::detect());
 
-Route::get('/', array('before' => 'auth', function()
+Route::get('/', array('before' => 'auth', 'as' => 'home', function()
 {
 	return View::make('home.index');
 }));
 
 //TODO: Move authentication functions into its own controller
-Route::get('login', function() {
-    $content = View::make('login');
+Route::get('login', array('as' => 'login', function() {
+    $content = View::make('login')
+        ->with('is_authenticated', Auth::check());
 
     return View::make('layout')
         ->with('title', 'Login')
         ->with('content', $content);
-});
+}));
 
 Route::post('login', function() {
     $username = Input::get('username');
@@ -58,27 +59,27 @@ Route::post('login', function() {
 
     //TODO: Enforce username and email uniqueness at the database level
     $user = User::where_username($username)->first();
-    if ($user == NULL) {
+    if (is_null($user)) {
         Session::flash('message', 'Incorrect username or password.');
-        return Redirect::to('login');
+        return Redirect::to_route('login');
     }
 
     if (!Hash::check($password, $user->password)) {
         Session::flash('message', 'Incorrect username or password.');
-        return Redirect::to('login');
+        return Redirect::to_route('login');
     }
 
     Auth::login($user->id);
     //TODO: Auth filter should supply redirect_to parameter
-    return Redirect::to('/');
+    return Redirect::to_route('home');
 });
 
-Route::get('logout', function() {
+Route::get('logout', array('as' => 'logout', function() {
     Auth::logout();
 
     Session::flash('message', 'You have logged out.');
-    return Redirect::to('login');
-});
+    return Redirect::to_route('login');
+}));
 
 /*
 |--------------------------------------------------------------------------
