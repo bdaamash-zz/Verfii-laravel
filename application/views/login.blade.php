@@ -1,7 +1,7 @@
 <div class="span16">
 	<ul class="breadcrumb span6">
 		<li>
-			<a href="<?php echo URL::to('#'); ?>">Register New User</a> <span class="divider">/</span>
+			<a href="<?php echo URL::to('/admin/users/create'); ?>">Register New User</a> <span class="divider">/</span>
 		</li>
 		<li>
 			<a href="<?php echo URL::to('#'); ?>">Forgot Password</a> <span class="divider">/</span>
