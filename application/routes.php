@@ -32,15 +32,20 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('home.index');
+Route::controller(Controller::detect());
+
+Route::get('login', function() {
+    return View::make('login');
 });
 
-// TODO: Put admin behind login wall when admin fixture have been created
-//Route::filter('pattern: admin/*', 'auth');
+Route::post('login', function() {
+    return 'Login form posted. TODO: Validate login and redirect.';
+});
 
-Route::controller(Controller::detect());
+Route::get('/', array('before' => 'auth', function()
+{
+	return View::make('home.index');
+}));
 
 /*
 |--------------------------------------------------------------------------
@@ -112,5 +117,5 @@ Route::filter('csrf', function()
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return View::make('login.index');
+	if (Auth::guest()) return Redirect::to('login');
 });
