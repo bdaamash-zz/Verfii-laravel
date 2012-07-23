@@ -45,10 +45,12 @@ class Admin_Users_Controller extends Controller {
 	 *
 	 * @return Response
 	 */
+    //TODO: Salt the password
 	public function post_create()
 	{
 		$validation = Validator::make(Input::all(), array(
 			'username' => array('required', 'max:255'),
+			'password' => array('required', 'max:255'),
 			'email' => array('required', 'max:255'),
 			'first_name' => array('required', 'max:255'),
 			'middle_name' => array('max:255'),
@@ -60,6 +62,7 @@ class Admin_Users_Controller extends Controller {
 			$user = new User;
 
 			$user->username = Input::get('username');
+			$user->password = Input::get('password');
 			$user->email = Input::get('email');
 			$user->first_name = Input::get('first_name');
 			$user->middle_name = Input::get('middle_name');
@@ -127,9 +130,10 @@ class Admin_Users_Controller extends Controller {
 	{
 		$validation = Validator::make(Input::all(), array(
 			'username' => array('required', 'max:255'),
+			'password' => array('required', 'max:255'),
 			'email' => array('required', 'max:255'),
 			'first_name' => array('required', 'max:255'),
-			'middle_name' => array('required', 'max:255'),
+			'middle_name' => array('max:255'),
 			'last_name' => array('required', 'max:255'),
 		));
 
@@ -143,6 +147,7 @@ class Admin_Users_Controller extends Controller {
 			}
 
 			$user->username = Input::get('username');
+			$user->password = Input::get('password');
 			$user->email = Input::get('email');
 			$user->first_name = Input::get('first_name');
 			$user->middle_name = Input::get('middle_name');

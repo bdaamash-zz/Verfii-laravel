@@ -17,6 +17,13 @@
 			</div>
 		</div>
 		<div class="clearfix">
+			<?php echo Form::label('password', 'Password'); ?>
+
+			<div class="input">
+				<?php echo Form::password('password', array('class' => 'span6')); ?>
+			</div>
+		</div>
+		<div class="clearfix">
 			<?php echo Form::label('email', 'Email'); ?>
 
 			<div class="input">
@@ -52,8 +59,7 @@
                     $selectable_companies = array();
                     $companies = Company::all();
                     foreach ($companies as $company) {
-                        $selectable_company = array($company->id => $company->name);
-                        $selectable_companies[] = $selectable_company;
+                        $selectable_companies[$company->id] = $company->name;
                     }
                     echo Form::select('company', $selectable_companies);
                 ?>

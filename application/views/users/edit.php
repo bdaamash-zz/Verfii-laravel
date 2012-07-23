@@ -17,6 +17,13 @@
 			</div>
 		</div>
 		<div class="clearfix">
+			<?php echo Form::label('password', 'Password'); ?>
+
+			<div class="input">
+				<?php echo Form::password('password', array('class' => 'span6')); ?>
+			</div>
+		</div>
+		<div class="clearfix">
 			<?php echo Form::label('email', 'Email'); ?>
 
 			<div class="input">
@@ -44,6 +51,21 @@
 				<?php echo Form::text('last_name', Input::old('last_name', $user->last_name), array('class' => 'span6')); ?>
 			</div>
 		</div>
+		<div class="clearfix">
+			<?php echo Form::label('company', 'Company'); ?>
+
+			<div class="input">
+                <?php
+                    $selectable_companies = array();
+                    $companies = Company::all();
+                    foreach ($companies as $company) {
+                        $selectable_companies[$company->id] = $company->name;
+                    }
+                    echo Form::select('company', $selectable_companies);
+                ?>
+			</div>
+		</div>
+        </div>
 
 		<div class="actions">
 			<?php echo Form::submit('Save', array('class' => 'btn primary')); ?>
