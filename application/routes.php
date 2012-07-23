@@ -41,12 +41,9 @@ Route::get('/', array('before' => 'auth', 'as' => 'home', function()
 
 //TODO: Move authentication functions into its own controller
 Route::get('login', array('as' => 'login', function() {
-    $content = View::make('login')
-        ->with('is_authenticated', Auth::check());
-
-    return View::make('layout')
+    return View::make('login')
         ->with('title', 'Login')
-        ->with('content', $content);
+        ->with('is_authenticated', Auth::check());
 }));
 
 Route::post('login', function() {

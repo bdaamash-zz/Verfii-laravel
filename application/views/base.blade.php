@@ -30,7 +30,7 @@
 				<?php endif; ?>
 			</div>
 			<div class="span16">
-				<?php  echo $content; ?>
+				@yield('content')
 			</div>
 		</div>
 	</div>
