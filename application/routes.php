@@ -54,7 +54,9 @@ Route::post('login', function() {
         return Redirect::to('login');
     }
 
-    //TODO: Enforce username and email uniqueness at the database level
+    // Laravel's built-in Eloquent authentication driver is very buggy. We're
+    // better off writing our own here.
+    // TODO: Enforce username and email uniqueness at the database level
     $user = User::where_username($username)->first();
     if (is_null($user)) {
         Session::flash('message', 'Incorrect username or password.');
