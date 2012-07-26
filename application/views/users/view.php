@@ -28,5 +28,9 @@
 	<strong>Last name:</strong>
 	<?php echo $user->last_name; ?>
 </p>
+<p>
+	<strong>Company:</strong>
+	<?php echo $user->company->name; ?>
+</p>
 
 <p><a href="<?php echo URL::to('admin/users/edit/'.$user->id); ?>">Edit</a> | <a href="<?php echo URL::to('admin/users/delete/'.$user->id); ?>" onclick="return confirm('Are you sure?')">Delete</a></p>

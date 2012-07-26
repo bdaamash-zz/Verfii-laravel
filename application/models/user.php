@@ -15,4 +15,8 @@ class User extends Eloquent {
 	 * @var bool
 	 */
 	public static $timestamps = true;
+
+    public function company() {
+        return $this->belongs_to('Company');
+    }
 }

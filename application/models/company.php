@@ -15,4 +15,8 @@ class Company extends Eloquent {
 	 * @var bool
 	 */
 	public static $timestamps = false;
+
+    public function users() {
+        return $this->has_many('User');
+    }
 }
