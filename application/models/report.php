@@ -15,4 +15,12 @@ class Report extends Eloquent {
 	 * @var bool
 	 */
 	public static $timestamps = true;
+
+    public function company() {
+        return $this->belongs_to('Company');
+    }
+
+    public function renter() {
+        return $this->belongs_to('Renter');
+    }
 }

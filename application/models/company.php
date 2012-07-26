@@ -19,4 +19,12 @@ class Company extends Eloquent {
     public function users() {
         return $this->has_many('User');
     }
+
+    public function renters() {
+        return $this->has_many('Renter');
+    }
+
+    public function reports() {
+        return $this->has_many('Report');
+    }
 }
